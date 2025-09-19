@@ -3,6 +3,10 @@ const monthInput = document.querySelector('#month');
 const yearInput = document.querySelector('#year');
 const calcButton = document.querySelector('.calcAgeButton');
 
+const yearValue = document.querySelector('.yearValue')
+const monthValue = document.querySelector('.monthValue')
+const dayValue = document.querySelector('.dayValue')
+
 calcButton.addEventListener('click', () => {
   const d = Number(dayInput.value);
   const m = Number(monthInput.value);
@@ -30,7 +34,10 @@ calcButton.addEventListener('click', () => {
   }
 
   const age = calculateAge(birthDate, today);
-  console.log(`${age.years} anos, ${age.months} meses e ${age.days} dias`);
+  yearValue.innerHTML = age.years;
+  monthValue.innerHTML = age.months;
+  dayValue.innerHTML = age.days;
+  //console.log(`${age.years} anos, ${age.months} meses e ${age.days} dias`);
 });
 
 function calculateAge(birthDate, today) {

@@ -38,7 +38,7 @@ body {
 
 .containerInput{
   display: flex;
-  justify-content: space-between;
+  gap:3rem;
   width: 90%;
 }
 
@@ -100,4 +100,52 @@ hr{
   color: var(--purple-500);
   font-weight: bold;
   font-size: 2rem;
+}
+
+.containerButton{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.containerButton hr{
+  width: 100%;
+  border: 1px solid var(--grey-200);
+}
+
+.containerButton button{
+  position: absolute;
+  right: 0px;
+}
+
+
+@media (max-width: 600px) {
+ .containerInput{
+  gap: 0.5rem;
+ }
+  .inputDate{
+    width: 70px;
+  }
+
+  .calcAgeButton {
+      padding: 5px;
+      height: 50px;
+      width: 50px;
+  }
+
+  .calcAgeButton img{
+    width: 100%;
+  }
+
+.containerButton button{
+        left:50%;
+        transform:translateX(-50%);
+}
+
+.calcAgeButton:hover{
+  transform: scale(1.1) translateX(-50%);
+}
+
 }

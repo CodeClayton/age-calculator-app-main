@@ -7,10 +7,41 @@ const yearValue = document.querySelector('.yearValue')
 const monthValue = document.querySelector('.monthValue')
 const dayValue = document.querySelector('.dayValue')
 
-//Validators form
-dayInput.addEventListener('input',() => {
-  console.log(dayInput.value)
-})
+//Validators form (LIMITO O INPUT)
+dayInput.addEventListener('input', (e) => {
+  let value = e.target.value;
+
+  value = value.replace(/\D/g, '');
+
+  if (value.length > 2) {
+    value = value.slice(0, 2);
+  }
+
+  e.target.value = value;
+});
+
+monthInput.addEventListener('input', (e) => {
+  let value = e.target.value;
+  value = value.replace(/\D/g, '');
+
+  if (value.length > 2) {
+    value = value.slice(0, 2);
+  }
+
+  e.target.value = value;
+});
+
+yearInput.addEventListener('input', (e) => {
+  let value = e.target.value;
+
+  value = value.replace(/\D/g, '');
+
+  if (value.length > 4) {
+    value = value.slice(0, 4);
+  }
+
+  e.target.value = value;
+});
 
 
 calcButton.addEventListener('click', () => {
